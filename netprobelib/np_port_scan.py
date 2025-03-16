@@ -11,7 +11,8 @@ def start_port_scan(): #função para iniciar o scan
     |++++++++++| Este é o Port Scan |+++++++++++|
     """)  # imprime uma mensagem de boas vindas
     print ("               Bem vindo ao NET Probe\n")  # Printa uma mensagem de bem vindo
-    host_informado = input("insira o IP do host desejado: ")  # recebe o IP do host
+    dns = input("insira o IP/Nome do host/site desejado: ")  # recebe o IP do host
+    host_informado = socket.gethostbyname(dns)
     try:                                                                                          
         host = ipaddress.ip_network(host_informado, strict=False)  # converte o IP do host para um objeto ipaddress.ip_network
     except:
